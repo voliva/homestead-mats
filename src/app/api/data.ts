@@ -5,8 +5,8 @@ export type Conversion = {
 
 const rt = (s: number): [Rate, Rate, Rate] => [
   s,
-  s / 2,
-  s >= 4 ? s / 4 : [2, s / 2],
+  Math.floor(s / 2),
+  s >= 4 ? Math.floor(s / 4) : [2, Math.floor(s / 2)],
 ];
 
 export const wood: Conversion = {
@@ -65,7 +65,7 @@ export const fiber: Conversion = {
   82866: rt(4),
   12341: rt(32),
   12254: rt(2),
-  12135: rt(8),
+  12135: [8, 8, 4],
   12134: rt(4),
   12512: rt(28),
   12509: rt(2),
